@@ -30,6 +30,13 @@ fun getStringlength (obj:Any) : Int ?{
     else
         return null
 }
+fun sayHello( vararg str:String){
+    str.forEach {
+        println(it)
+    }
+}
+
+fun greet(g:String="Defalut greet",name:String="Kotlin") =println("$g $name")
 
 fun main(args: Array<String>) {
     println("Hello Kotlin!")
@@ -50,5 +57,20 @@ fun main(args: Array<String>) {
     name="Sumit"
     print(name)
 
+
+    sayHello("Sumit","Dahiya","Kotlin")
+
+    val arr= arrayOf("Sumit","dahiya","kotlin")
+    sayHello(*arr)//* spread operator
+
+    greet(name="Sumit",g="HI") // names argument
+
+    //greet(name="sumit","Hi")
+
+    //default parameter
+    greet(name="Sumit")
+    greet()
+
+    sayHello(str=*arr)
 
 }
