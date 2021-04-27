@@ -80,6 +80,42 @@ fun main() {
     mp.put("four",4)
     print(mp)
 
+    val empty = emptyList<String>()
+    val empty1=emptySet<Int>()
+
+    //array is of fixed size and mutable by default
+
+    //For lists, there is a constructor that takes the list size and the initializer function that defines the element value based on its index.
+    val doubled = List(3, { it * 2 })
+    println(doubled)
+
+    val sourceList=mutableListOf(1,2,3)
+    val copyList=sourceList.toMutableList()
+    val readOnlyCopyList=sourceList.toList()
+    sourceList.add(4)
+    println("Copy size: ${copyList.size}")
+    println("Read-only copy size: ${readOnlyCopyList.size}")
+    sourceList[1]=10
+    println(sourceList)
+    println(copyList)
+    val copySet = sourceList.toMutableSet()
+    copySet.add(3)
+    copySet.add(4)
+    println(copySet)
+
+    val referenceList = sourceList
+    referenceList.add(4)
+    println(sourceList)
+
+    val number= listOf<Int>(1,2,3)
+    val itr=number.listIterator()
+    while(itr.hasNext()){
+        println(itr.next())
+    }
+    while(itr.hasPrevious()){
+        println(itr.previous())
+    }
+
 
 
 }
